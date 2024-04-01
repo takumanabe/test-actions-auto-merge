@@ -11,19 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ユーザー情報設定(merge時に必要)
-      - name: Set up Git
-        run: |
-          git config --global user.email "t.w11129313@gmail.com"
-          git config --global user.name "takumanabe"
-
       - name: Checkout code
         uses: actions/checkout@v2
 
       #  phase2に移動 > developをマージし、変更をphase2ブランチにプッシュ
       - name: Merge to phase2
         run: |
-          git fetch origin phase2:phase2
+          git config --global user.email "t.w11129313@gmail.com"
+          git config --global user.name "takumanabe"
+          git fetch origin phase2
           git checkout phase2
-          git merge develop --no-ff --no-edit --allow-unrelated-histories
+          git merge origin/develop --no-edit
           git push origin phase2
