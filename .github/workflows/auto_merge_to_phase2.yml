@@ -1,3 +1,4 @@
+# developにpush時、自動でphase2にマージ
 name: Merge to phase2
 
 on:
@@ -10,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # ユーザー情報設定(merge時に必要)
       - name: Set up Git
         run: |
           git config --global user.email "t.w11129313@gmail.com"
