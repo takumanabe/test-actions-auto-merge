@@ -15,6 +15,7 @@ jobs:
 
       - name: Merge to phase2
         run: |
+          git fetch origin phase2:phase2
           git checkout phase2
           git merge develop --no-ff --no-edit
           git push origin phase2
