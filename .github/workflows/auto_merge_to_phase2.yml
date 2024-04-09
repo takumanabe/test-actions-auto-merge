@@ -15,10 +15,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # developブランチの最新を取得
-      - name: Fetch latest changes from develop
-        run: git fetch origin develop:develop
-
       #  phase2に移動 > developをマージし、変更をphase2ブランチにプッシュ
       - name: Merge to phase2
         run: |
