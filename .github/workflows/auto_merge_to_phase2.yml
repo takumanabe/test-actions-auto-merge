@@ -22,5 +22,5 @@ jobs:
           git config --global user.name "takumanabe"
           git fetch origin phase2:phase2
           git checkout phase2
-          git merge develop --no-ff --no-edit
-          git push origin phase2 --force-with-lease
+          git merge develop --no-ff --no-edit --allow-unrelated-histories
+          git push origin phase2
